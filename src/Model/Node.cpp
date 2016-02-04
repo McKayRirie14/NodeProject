@@ -6,6 +6,7 @@
  */
 
 #include "Node.h"
+#include
 
 template <class Type>
 Node::Node()
