@@ -10,15 +10,23 @@
 
 #include <iostream>
 #include <string>
-#include "../Model/Node.h"
-#include "../Model/Node.cpp"
-#include "../Model/ArrayNode.h"
-#include "../Model"
 
-class NodeController {
+#include "../Model/Node.cpp"
+#include "../Model/ArrayNode.cpp"
+#include "../Model/CTECArray.cpp"
+
+using namespace std;
+
+class NodeController
+{
+private:
+	CTECArray<int> * notHipsterInts;
+
+
 public:
 	NodeController();
 	virtual ~NodeController();
+	void start();
 };
 
 #endif /* SRC_CONTROLLER_NODECONTROLLER_H_ */

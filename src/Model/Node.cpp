@@ -6,10 +6,10 @@
  */
 
 #include "Node.h"
-#include
+#include <iostream>
 
 template <class Type>
-Node::Node()
+Node<Type>::Node()
 {
 	// TODO Auto-generated constructor stub
 	value = 0;
@@ -17,25 +17,19 @@ Node::Node()
 }
 
 template <class Type>
-Node::~Node()
+Node<Type>::~Node()
 {
 	// TODO Auto-generated destructor stub
 }
 
 template <class Type>
-Type Node<Type> ::~Node()
-{
-	// TODO Auto-generated destructor stub
-}
-
-template <class Type>
-type Node<Type> :: getValue()
+Type Node<Type> :: getValue()
 {
 	return this->value;
 }
 
 template <class Type>
-void Node<Type> :: setValue(Type value)
+void Node<Type> :: setValue(const Type& value)
 {
 	this->value = value;
 }
@@ -46,8 +40,3 @@ Node<Type> * Node<Type> :: getPointers()
 	return this ->pointers;
 }
 
-
-Node<Type> * Node<Type> ::getPointers()
-{
-	return this->pointers;
-}

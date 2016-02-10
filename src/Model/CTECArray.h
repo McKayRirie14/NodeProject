@@ -8,7 +8,7 @@
 #ifndef SRC_MODEL_CTECARRAY_H_
 #define SRC_MODEL_CTECARRAY_H_
 
-#include "Node.h"
+#include "ArrayNode.h"
 
 template <class Type>
 class CTECArray
@@ -19,7 +19,9 @@ private:
 public:
 	CTECArray(int size);
 	virtual ~CTECArray();
-
+	int getSize();
+	Type get(int position);
+	void set(int position, const Type& value);
 };
 
 

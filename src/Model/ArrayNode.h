@@ -11,15 +11,17 @@
 #include "Node.h"
 
 template <class Type>
-class ArrayNode : pubic Node<Type>
+class ArrayNode: public Node<Type>
 {
 private:
-	ArrayNode * next;
+	ArrayNode<Type> * next;
 public:
 	ArrayNode();
 	ArrayNode(Type value);
-	ArrayNode(Type value, ArrayNode * next );
+	ArrayNode(Type value, ArrayNode<Type> * next );
 	virtual ~ArrayNode();
+	ArrayNode<Type> * getNext();
+	void setNext(ArrayNode<Type> * next);
 };
 
 #endif /* MODEL_ARRAYNODE_H_ */

@@ -7,22 +7,23 @@
 
 #include "CTECArray.h"
 #include <assert.h>
+#include <iostream>
 using namespace std;
 
 template <class Type>
-CTECArray<Type>::~CTECArray(int size)
+CTECArray<Type>::CTECArray(int size)
 {
 	this->size = size;
-	head->head =nullptr;
+	this->head = nullptr;
 
-	assert(size <=0)
+	assert(size <=0);
 
 	for(int index = 0; index < size; index++)
 	{
 		if(head != nullptr)
 		{	//We have more than one ArrayNode.
-			ArrayNode<Type> nextNode = new ArrayNode<Type>();
-			nextNode_>setNext(head);
+			ArrayNode<Type> * nextNode = new ArrayNode<Type>();
+			nextNode->setNext(head);
 			head = nextNode;
 
 		}
@@ -34,13 +35,16 @@ CTECArray<Type>::~CTECArray(int size)
 	}
 }
 
-template <class Tpe>
+template <class Type>
 CTECArray<Type>::~CTECArray()
 {
 	ArrayNode<Type>* deleteMe = head;
 	for (int index = 0; index < size; index++)
 	{
-		if (deleteMe->getNext() !)
+		if (deleteMe->getNext() )
+		{
+
+		}
 	}
 }
 
@@ -61,9 +65,9 @@ Type CTECArray<Type>:: get(int position)
 
 	assert(position < size && position >= 0);
 
-	ArrayNode<Type> * curretn = head;
+	ArrayNode<Type> * current = head;
 	//Inclusive cause I am inside the bounds guaranteed :D
-	for (int spot  0; spot <= position; spot++)
+	for (int spot = 0; spot <= position; spot++)
 	{
 		if (spot != position)
 		{
@@ -77,58 +81,25 @@ Type CTECArray<Type>:: get(int position)
 }
 
 template<class Type>
-void CTECArray<Type>::set(int position, const Type&value)
+void CTECArray<Type>::set(int position, const Type& value)
 {
 	//Bounds check for size and negative.
-	assert(position <size || position < 0)
+	assert(position < size || position < 0);
+
+	ArrayNode<Type> * current = head;
+	//Inclusive because I am inside the bounds guaranteed :D
+	for(int spot = 0; spot <= position; spot++)
 	{
-		cerr << "Don't do this! out of bounds!!! Doh" << endl;
-	}
-	else
-	{
-		ArrayNode<Type> * current = head;
-		//Inclusive because I am inside the bounds guaranteed :D
-		for(int spot = 0; spot <= position; spot++)
+		if(spot != position)
 		{
-			if(spot !=position)
-			{
-				current = current->getNext();
-			}
-			else
-			{
-				return current->getValue();
-			}
+			current = current->getNext();
+		}
+		else
+		{
+			current->setValue(value);
 		}
 	}
+
 }
-
-template <class Type>
-void CTECArray<Type>:: set(int position, Type& vlaue)
-{
-	//Bounds check for size and negative.
-	if(position >= size || position < 0)
-	{
-		cerr << "Don't do this!" << endl;
-	}
-	else
-	{
-		ArrayNode<YType> * current = head;
-		for (int spot = 0;spot <= position; spot++)
-		{
-			if (spot != position)
-
-			{
-				current = current->getNext();
-			}
-			else
-			{
-				current = curnt->setValue();
-			}
-		}
-	}
-}
-
-#endif /* SRC_MODEL_CTECARRAY_H_ */
-
 
 

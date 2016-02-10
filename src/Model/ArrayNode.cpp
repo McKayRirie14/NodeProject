@@ -5,7 +5,7 @@
  *      Author: mrir2917
  */
 
-#include <iiostream>
+#include <iostream>
 #include "ArrayNode.h"
 
 template<class Type>
@@ -31,5 +31,17 @@ ArrayNode<Type>::ArrayNode(Type value, ArrayNode * next) : Node<Type>(value)
 template<class Type>
 ArrayNode<Type>::~ArrayNode()
 {
-	// TODO Auto-generated destructor stub
+	// TODO Auto-generated instructor stub
+}
+
+template<class Type>
+ArrayNode<Type> * ArrayNode<Type>:: getNext()
+{
+	return this->next;
+}
+
+template<class Type>
+void ArrayNode<Type>:: setNext(ArrayNode<Type> * next)
+{
+	this->next = next;
 }
