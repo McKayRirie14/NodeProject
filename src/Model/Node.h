@@ -8,6 +8,7 @@
 #ifndef SRC_CONTROLLER_NODE_H_
 #define SRC_CONTROLLER_NODE_H_
 
+template <class Type>
 class Node
 {
 private:
@@ -15,8 +16,10 @@ private:
 	Node * pointers;	//Pointer to the array of Nodes that are linked to this Node.
 public:
 	Node();
+	Node(Type value);
 	virtual ~Node();
 	Type getValue();
+	void setValue(const Type& value);
 	Node * getPointers();
 };
 

@@ -20,6 +20,6 @@ public:
 	ArrayNode(Type value);
 	ArrayNode(Type value, ArrayNode * next );
 	virtual ~ArrayNode();
-}
+};
 
 #endif /* MODEL_ARRAYNODE_H_ */

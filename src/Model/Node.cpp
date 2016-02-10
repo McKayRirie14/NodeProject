@@ -23,12 +23,30 @@ Node::~Node()
 }
 
 template <class Type>
-Type Node<Type> :: getValue
+Type Node<Type> ::~Node()
+{
+	// TODO Auto-generated destructor stub
+}
+
+template <class Type>
+type Node<Type> :: getValue()
 {
 	return this->value;
 }
 
 template <class Type>
+void Node<Type> :: setValue(Type value)
+{
+	this->value = value;
+}
+
+template <class Type>
+Node<Type> * Node<Type> :: getPointers()
+{
+	return this ->pointers;
+}
+
+
 Node<Type> * Node<Type> ::getPointers()
 {
 	return this->pointers;
