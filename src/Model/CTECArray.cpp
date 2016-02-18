@@ -29,8 +29,8 @@ CTECArray<Type>::CTECArray(int size)
 		}
 		else
 		{	//This is the first node in the array
-			ArrayNode<Type> * first = new ArrayNode<Type>();
-			head = first;
+			ArrayNode<Type> * firstNode = new ArrayNode<Type>();
+			this->head = firstNode;
 		}
 	}
 }
@@ -43,15 +43,22 @@ CTECArray<Type>::~CTECArray()
 	{
 		if (deleteMe->getNext() )
 		{
-
+			head = delete->getNext();
+			deleteMe->setNext(nullptr);
 		}
+
+		delete deleteMe;
+		deleteMe = head;
+
 	}
+
+	delete head;
 }
 
 template <class Type>
 int CTECArray<Type>:: getSize()
 {
-return this->size;
+	return this->size;
 }
 
 template <class Type>
@@ -84,7 +91,7 @@ template<class Type>
 void CTECArray<Type>::set(int position, const Type& value)
 {
 	//Bounds check for size and negative.
-	assert(position < size || position < 0);
+	assert(position < size && position >= 0);
 
 	ArrayNode<Type> * current = head;
 	//Inclusive because I am inside the bounds guaranteed :D

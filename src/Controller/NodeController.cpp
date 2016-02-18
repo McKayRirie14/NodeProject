@@ -5,7 +5,10 @@
  *      Author: mrir2917
  */
 
+#include <iosFrame>
 #include "NodeController.h"
+
+using namespace std;
 
 NodeController::NodeController()
 {
@@ -13,19 +16,25 @@ NodeController::NodeController()
 }
 NodeController::~NodeController()
 {
-
+	//TODO Auto-generated destructor stub
 }
 
 void NodeController :: start()
 {
+	arrayTimer.startTimer();
+
 	for(int index = 0; index < notHipsterInts->getSize(); index++)
 	{
-		notHipsterInts->set(index, (23 * index));
+		notHipsterInts->set(index, (index * 23));
 	}
 
-	for(int index = 0; index < notHipsterInts->getSize(); index)
+	for(int index = notHipsterInts->getSize() - 1; index >= 0; index--)
 	{
-		cout << "notHipsterInts at index " << index << " contains " << notHipsterInts->get(index) << endl;
+		cout << "The contents of the notHipsterInts array node " << index << " are " << notHipsterInts->get(index) << endl;
 	}
+
+	arrayTimer.stopTimer();
+	arrayTimer.displayTimerInformation();
+
 }
 

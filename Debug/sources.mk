@@ -25,4 +25,5 @@ CPP_DEPS :=
 SUBDIRS := \
 src/Model \
 src/Controller \
+.metadata/.plugins/org.eclipse.cdt.make.core \
 
