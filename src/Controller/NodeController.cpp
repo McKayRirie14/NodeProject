@@ -34,7 +34,14 @@ void NodeController :: start()
 	}
 
 	arrayTimer.stopTimer();
+	{
+
+	}
+
 	arrayTimer.displayTimerInformation();
+	{
+
+	}
 
 }
 

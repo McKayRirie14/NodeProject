@@ -9,10 +9,9 @@
 #include <iostream>
 
 template <class Type>
-Node<Type>::Node()
+Node<Type>::Node(const Type& value)
 {
-	// TODO Auto-generated constructor stub
-	value = 0;
+	this->value = value;
 	pointers = nullptr;
 }
 

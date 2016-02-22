@@ -21,6 +21,7 @@ class NodeController
 {
 private:
 	CTECArray<int> * notHipsterInts;
+	Timer arrayTimer;
 
 
 public:

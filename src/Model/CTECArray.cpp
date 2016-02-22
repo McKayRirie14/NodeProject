@@ -41,17 +41,14 @@ CTECArray<Type>::~CTECArray()
 	ArrayNode<Type>* deleteMe = head;
 	for (int index = 0; index < size; index++)
 	{
-		if (deleteMe->getNext() )
+		if (deleteMe->getNext() != nullptr)
 		{
-			head = delete->getNext();
+			head = deleteMe->getNext();
 			deleteMe->setNext(nullptr);
 		}
-
-		delete deleteMe;
+		delete deleteMe->getNext();
 		deleteMe = head;
-
 	}
-
 	delete head;
 }
 
@@ -88,9 +85,11 @@ Type CTECArray<Type>:: get(int position)
 }
 
 template<class Type>
-void CTECArray<Type>::set(int position, const Type& value)
+void CTECArray<Type>::get(int position)
 {
-	//Bounds check for size and negative.
+	/*Bounds check for size and negative.
+	 *
+	 */
 	assert(position < size && position >= 0);
 
 	ArrayNode<Type> * current = head;
@@ -103,10 +102,14 @@ void CTECArray<Type>::set(int position, const Type& value)
 		}
 		else
 		{
-			current->setValue(value);
+			return current->getValue();
 		}
 	}
-
 }
 
-
+template<class Type>
+void CTECArray<Type>::set(int position, const Type& value)
+{
+	//bounds chech for size and negative.
+	assert(position < size && position >= 0);
+}
